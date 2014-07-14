@@ -18,10 +18,12 @@ public class Selenium2Example{
 	//this class depends on interface but not the implements of interface 
 	public static void main(String[] args) {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+		//IEDriverServer.exe ChromeDriver.exe
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\ChromeDriver.exe");
 		
 		WebDriver driver=new ChromeDriver();
 //				new FirefoxDriver();
+		
 		
 		//use get method access Google
 		driver.get("http://www.google.com.hk");

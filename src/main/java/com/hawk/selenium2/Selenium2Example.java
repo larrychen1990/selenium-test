@@ -19,7 +19,7 @@ public class Selenium2Example{
 	public static void main(String[] args) {
 		
 		//IEDriverServer.exe ChromeDriver.exe
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DC90726\\Desktop\\Chrome\\Application\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\chromedriver.exe");
 		
 		WebDriver driver=new ChromeDriver();
 //				new FirefoxDriver();

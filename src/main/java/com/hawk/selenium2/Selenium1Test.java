@@ -1,14 +1,16 @@
 package com.hawk.selenium2;
 
-import com.thoughtworks.selenium.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.regex.Pattern;
 
-public class Selenium3Example extends SeleneseTestCase {
+import com.thoughtworks.selenium.DefaultSelenium;
+import com.thoughtworks.selenium.SeleneseTestCase;
+
+public class Selenium1Test extends SeleneseTestCase {
 	@Before
 	public void setUp() throws Exception {
+
 		selenium = new DefaultSelenium("localhost", 4444, "*chrome",
 				"http://www.baidu.com/");// 这里如果运行不了，修改浏览器为 *firefox 或 *iexplore
 		selenium.start();

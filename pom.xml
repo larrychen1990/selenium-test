@@ -7,50 +7,71 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>selenium-test Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
     
-    
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-api</artifactId>
-        <version>2.42.2</version>
-    </dependency>  
-    
+    <!-- servlet-api jetty selenium-java junit4.9 -->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-server</artifactId>
         <version>2.42.2</version>
     </dependency>  
     
-    <dependency>
+    <!--guava json  -->
+   <!--  <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-api</artifactId>
+        <version>2.42.2</version>
+    </dependency>  -->
+    
+    
+    <!--selenium-chrome-driver selenium-htmlunit-driver selenium-firefox-driver
+    	selenium-ie-driver selenium-safari-driver selenium-iphone-driver
+    	selenium-android-driver 
+      -->
+   <!--  <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>2.42.2</version>
-    </dependency>  
+    </dependency>  --> 
     
-    <dependency>
+    <!-- selenium-remote-driver  commons-io -->
+   <!--  <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-firefox-driver</artifactId>
         <version>2.42.2</version>
-    </dependency>  
+    </dependency> -->  
     
-    <dependency>
+    <!-- selenium-remote-driver -->
+    <!-- <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-chrome-driver</artifactId>
         <version>2.42.2</version>
-    </dependency>  
+    </dependency>  --> 
     
-    <dependency>
+    <!-- guava selenium-java  -->
+    <!--  <dependency>
+         <groupId>com.opera</groupId>
+         <artifactId>operadriver</artifactId>
+		 <version>1.5</version>
+     </dependency> -->
+         
+    <!-- selenium-remote-driver  -->
+    <!--  <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-ie-driver</artifactId>
+            <version>2.42.2</version>
+     </dependency> -->
+    
+    <!--  json selenium-api  guava  -->
+  <!--  <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-remote-driver</artifactId>
       <version>2.42.2</version>
-    </dependency>
+    </dependency>  -->
+    
+    
     
     
     

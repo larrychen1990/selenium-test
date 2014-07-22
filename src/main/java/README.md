@@ -15,7 +15,7 @@
 	 - scale and distribute scripts across many environments
  
 ## How to use Selenium
- - Add libs to maven project
+ - Maven POM files
    + ```sh
 		<!-- servlet-api jetty selenium-java junit4.9 -->
 		<!-- so we just need to add this dependency-->
@@ -78,15 +78,15 @@
 	      <version>2.42.2</version>
 	    </dependency>  -->
 	   ``` 
-	+ put browser driver in the brwoser pugin's root directory (here we don't have permission
-		to add files to the C:\Program Files\ directory, so i copy the browser's home directory
+	+ Put browser driver in the brwoser pugin's root directory (here we don't have permission
+		to add files to the `C:\Program Files\` directory, so i copy the browser's home directory
 		simply under our project,[document](http://docs.seleniumhq.org/download/))
 	 	- chromedriver.exe 
 	 	- IEDriverServer.exe
 	 	
-	+ set the System property
+	+ Set the System property
 		- Chrome 
-			- ```System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);``
+			- ```System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);```
 		- Firefox
 			- ```System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);```
 		- IE
@@ -99,7 +99,7 @@
 	
 	+ Binding it with junit test and assert the result
 		
-	+ we should be carefull with the Selenium libs.
+	+ We should be carefull with the Selenium libs.
 		- To run the Selenium 2 projects we should use the `guava15.0+.jar`
 		  but not the `guava11.0.2.jar` which we use in Selenium 1	     
 	    
@@ -204,11 +204,11 @@
 		}
 	```
 	 
-	 * step 1 : load the page
-	 * step 2 : find the web element
-	 * step 3 : do your actions, sendKeys, perform actions
-	 * step 4 : submit or click
-	 * step 5 : close the tab and browser
+	 * Step 1 : load the page
+	 * Step 2 : find the web element
+	 * Step 3 : do your actions, `sendKeys, perform` actions
+	 * Step 4 : submit or click
+	 * Step 5 : close the tab and browser
 	 	
 	 ```sh	
 	 *  dr.findElement(By.id("id")); 

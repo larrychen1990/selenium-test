@@ -89,17 +89,11 @@
  + Set the System property
 	
 	- Chrome 
-		
 		- `System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);`
-	
 	- Firefox
-		
 		- `System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);`
-	
 	- IE
-		
 		- `System.setProperty(IE_DRIVER,IE_DRIVER_URL);`
-		
 	
 	```sh
 	
@@ -215,7 +209,6 @@
 			}
 		}
 	```
-	 
 	 
 	* Step 1 : load the page
 	* Step 2 : find the web element

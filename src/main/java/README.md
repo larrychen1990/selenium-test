@@ -93,7 +93,7 @@
 			- ```System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);```
 		- IE
 			- ```System.setProperty(IE_DRIVER,IE_DRIVER_URL);```
-		```
+		```sh
 		* CHROME_DRIVER="webdriver.chrome.driver";
 		* FIREFOX_DRIVER="webdriver.firefox.bin";
 		* IE_DRIVER="webdriver.ie.driver";

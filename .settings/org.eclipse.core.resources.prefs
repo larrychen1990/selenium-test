@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/main/java/README.md=UTF-8
 encoding//src/main/java/com/hawk/selenium2/HtmlHandle.java=UTF-8
 encoding//src/main/java/com/hawk/selenium2/Selenium1Test.java=UTF-8
 encoding//src/main/java/com/hawk/selenium2/Selenium2.java=UTF-8
+encoding//src/main/java/com/hawk/selenium2/Selenium2SimpleTest.java=UTF-8
 encoding//src/main/java/com/hawk/selenium2/Selenium2Test1.java=UTF-8
+encoding//src/main/java/com/hawk/selenium2/TestAllInOne.java=UTF-8

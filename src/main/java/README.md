@@ -120,10 +120,6 @@
 		import org.openqa.selenium.support.ui.ExpectedCondition;
 		import org.openqa.selenium.support.ui.WebDriverWait;
 		
-		/**
-		 * 
-		 * @date Jul 14, 2014
-		 */
 		public class Selenium2SimpleTest {
 			
 			private WebDriver driver;
@@ -188,7 +184,7 @@
 				// elements automation
 				element.submit();
 				
-				// print the web's title, Cheese - Google 搜尋
+				// print the web's title, Cheese - Google æ�œå°‹
 				System.out.println("Page title is: " + driver.getTitle());
 				
 				// the serach page of google must go through the dynamic js

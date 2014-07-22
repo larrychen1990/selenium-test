@@ -1,6 +1,7 @@
 package com.hawk.selenium2;
 
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -28,6 +29,9 @@ public class Selenium2Test1 {
 	private WebDriver driver;
 	private WebElement element;
 	private static Log logger=LogFactory.getLog(Selenium2Test1.class);
+	
+//	private static final Logger logger=Logger.getLogger(Class.class.getName());
+	
 	private static final String BASE_URL="http://www.google.com.au";
 	
 	private static final String CHROME_DRIVER="webdriver.chrome.driver";

@@ -2,6 +2,8 @@ package com.hawk.selenium2;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,6 +72,8 @@ public class Selenium2SimpleTest {
 		// load page
 		driver.get(BASE_URL);
 		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
+		
 		// find name element in the html input elements
 		element = driver.findElement(By.name("q"));
 		
@@ -82,7 +86,7 @@ public class Selenium2SimpleTest {
 		// elements automation
 		element.submit();
 		
-		// print the web's title, Cheese - Google 搜尋
+		// print the web's title, Cheese - Google æ�œå°‹
 		System.out.println("Page title is: " + driver.getTitle());
 		
 		// the serach page of google must go through the dynamic js

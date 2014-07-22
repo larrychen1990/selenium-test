@@ -2,8 +2,8 @@
 
 ## What is Selenium. An [OpenQA project](http://www.openqa.org/) 
  - Selenium IDE
- - Selenium Remote Control (deprecated)
- - Selenium WebDriver (Selenium 1.0 + WebDriver = Selenium 2.0)
+ - Selenium Remote Control *deprecated*
+ - Selenium WebDriver *Selenium 1.0 + WebDriver = Selenium 2.0*
  - Selenium Grid
  
 ## Why Selenium 
@@ -81,8 +81,8 @@
 	+ Put browser driver in the brwoser pugin's root directory (here we don't have permission
 		to add files to the `C:\Program Files\` directory, so i copy the browser's home directory
 		simply under our project,[document](http://docs.seleniumhq.org/download/))
-	 	- chromedriver.exe 
-	 	- IEDriverServer.exe
+	 	- `chromedriver.exe`
+	 	- `IEDriverServer.exe`
 	 	
 	+ Set the System property
 		- Chrome 
@@ -206,7 +206,7 @@
 	 
 	 * Step 1 : load the page
 	 * Step 2 : find the web element
-	 * Step 3 : do your actions, `sendKeys, perform` actions
+	 * Step 3 : do your actions, `sendKeys("")`, `perform()` actions
 	 * Step 4 : submit or click
 	 * Step 5 : close the tab and browser
 	 	
@@ -214,7 +214,7 @@
 	 *  dr.findElement(By.id("id")); 
      * 	dr.findElement(By.className("classNmae"));  
      * 	dr.findElement(By.tagName("tag"));
-     * 	dr.findElement(By.cssSelector("className|name|id"));// .dijit.dijitItems the second . is space  
+     * 	dr.findElement(By.cssSelector("className|name|id"));// .dijit.dijitItems the second . delegate blank space  
      * 	dr.findElement(By.name("name"));  
      * 	dr.findElement(By.linkText("fullLink")); 
      * 	dr.findElement(By.partialLinkText("link"));

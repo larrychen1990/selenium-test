@@ -88,11 +88,12 @@
 	 	
    - Set the System property
 		- Chrome 
-			- ```System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);```
+			- `System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);`
 		- Firefox
-			- ```System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);```
+			- `System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);`
 		- IE
-			- ```System.setProperty(IE_DRIVER,IE_DRIVER_URL);```
+			- `System.setProperty(IE_DRIVER,IE_DRIVER_URL);`
+		
 		```sh
 		* CHROME_DRIVER="webdriver.chrome.driver";
 		* FIREFOX_DRIVER="webdriver.firefox.bin";
@@ -205,6 +206,7 @@
 			}
 		}
 	```
+	 
 	 
 	 * Step 1 : load the page
 	 * Step 2 : find the web element

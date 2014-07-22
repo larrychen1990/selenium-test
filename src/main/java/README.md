@@ -87,18 +87,27 @@
 	 	- `IEDriverServer.exe`
 	 	
  + Set the System property
-		- Chrome 
-			- System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);
-		- Firefox
-			- System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);
-		- IE
-			- System.setProperty(IE_DRIVER,IE_DRIVER_URL);
+	
+	- Chrome 
 		
-		```sh
-		* CHROME_DRIVER="webdriver.chrome.driver";
-		* FIREFOX_DRIVER="webdriver.firefox.bin";
-		* IE_DRIVER="webdriver.ie.driver";
-		```
+		- `System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);`
+	
+	- Firefox
+		
+		- `System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);`
+	
+	- IE
+		
+		- `System.setProperty(IE_DRIVER,IE_DRIVER_URL);`
+		
+	
+	```sh
+	
+	* CHROME_DRIVER="webdriver.chrome.driver";
+	* FIREFOX_DRIVER="webdriver.firefox.bin";
+	* IE_DRIVER="webdriver.ie.driver";
+	
+	```
 	
  + Binding it with junit test and assert the result
 		
@@ -210,13 +219,13 @@
 	 
 	* Step 1 : load the page
 	* Step 2 : find the web element
-	* Step 3 : do your actions, `sendKeys("")`, `perform()` actions
+	* Step 3 : do your actions,`sendKeys("")`, `perform()` actions
 	* Step 4 : submit or click
 	* Step 5 : close the tab and browser
 	 	
 	 	
-	 `````sh	
-	*  dr.findElement(By.id("id")); 
+	 ```sh	
+	* dr.findElement(By.id("id")); 
 	* dr.findElement(By.className("classNmae"));  
 	* dr.findElement(By.tagName("tag"));
 	* dr.findElement(By.cssSelector("className|name|id"));// .dijit.dijitItems the second . delegate blank space  
@@ -224,6 +233,6 @@
 	* dr.findElement(By.linkText("fullLink")); 
 	* dr.findElement(By.partialLinkText("link"));
 	* dr.findElement(By.xpath("//input[@type='radio']"));
-	 `````  
+	 ```  
 	    
 	    

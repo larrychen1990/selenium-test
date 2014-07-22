@@ -81,10 +81,10 @@
 	   ``` 
 	   
  + Put browser driver in the brwoser pugin's root directory (here we don't have permission
-		to add files to the `C:\Program Files\` directory, so i copy the browser's home directory
+		to add files to the ``C:\Program Files\`` directory, so i copy the browser's home directory
 		simply under our project,[document](http://docs.seleniumhq.org/download/))
-	 	- `chromedriver.exe`
-	 	- `IEDriverServer.exe`
+	 	- ``chromedriver.exe``
+	 	- ``IEDriverServer.exe``
 	 	
  + Set the System property
 	
@@ -96,22 +96,21 @@
 		- `System.setProperty(IE_DRIVER,IE_DRIVER_URL);`
 	
 	```sh
-	
 	* CHROME_DRIVER="webdriver.chrome.driver";
 	* FIREFOX_DRIVER="webdriver.firefox.bin";
 	* IE_DRIVER="webdriver.ie.driver";
-	
 	```
 	
  + Binding it with junit test and assert the result
 		
  + We should be carefull with the Selenium libs.
-		- To run the Selenium 2 projects we should use the `guava15.0+.jar`
-		  but not the `guava11.0.2.jar` which we use in Selenium 1	     
+		- To run the Selenium 2 projects we should use the ``guava15.0+.jar``
+		  but not the ``guava11.0.2.jar`` which we use in Selenium 1	     
 	    
  + Here is a simple test case
 	 	
 	 	```sh
+
 	 	package com.hawk.selenium2;
 
 		import static org.junit.Assert.assertNotNull;
@@ -212,7 +211,7 @@
 	 
 	* Step 1 : load the page
 	* Step 2 : find the web element
-	* Step 3 : do your actions,`sendKeys("")`, `perform()` actions
+	* Step 3 : do your actions,``sendKeys("")``, ``perform()`` actions
 	* Step 4 : submit or click
 	* Step 5 : close the tab and browser
 	 	

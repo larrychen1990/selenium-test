@@ -15,7 +15,7 @@
 	 - scale and distribute scripts across many environments
  
 ## How to use Selenium
-   - Maven POM files
+   + Maven POM files
    
     ```sh
 		<!-- servlet-api jetty selenium-java junit4.9 -->
@@ -80,13 +80,13 @@
 	    </dependency>  -->
 	   ``` 
 	   
-   - Put browser driver in the brwoser pugin's root directory (here we don't have permission
+   + Put browser driver in the brwoser pugin's root directory (here we don't have permission
 		to add files to the `C:\Program Files\` directory, so i copy the browser's home directory
 		simply under our project,[document](http://docs.seleniumhq.org/download/))
 	 	- `chromedriver.exe`
 	 	- `IEDriverServer.exe`
 	 	
-   - Set the System property
+   + Set the System property
 		- Chrome 
 			- `System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);`
 		- Firefox
@@ -100,13 +100,13 @@
 		* IE_DRIVER="webdriver.ie.driver";
 		```
 	
-   - Binding it with junit test and assert the result
+   + Binding it with junit test and assert the result
 		
-   - We should be carefull with the Selenium libs.
+   + We should be carefull with the Selenium libs.
 		- To run the Selenium 2 projects we should use the `guava15.0+.jar`
 		  but not the `guava11.0.2.jar` which we use in Selenium 1	     
 	    
-   - Here is a simple test case
+   + Here is a simple test case
 	 	
 	 	```sh
 	 	package com.hawk.selenium2;

@@ -1,4 +1,4 @@
-		 Selenium automates browsers
+### Selenium automates browsers
 
 ## What is Selenium. An OpenQA project (http://docs.seleniumhq.org/)
  - Selenium IDE
@@ -16,7 +16,7 @@
  
 ## How to use Selenium
  - Add libs to maven project
-   + 
+   +    <code>
 		<!-- servlet-api jetty selenium-java junit4.9 -->
 		<!-- so we just need to add this dependency-->
 	    <dependency>
@@ -77,7 +77,7 @@
 	      <artifactId>selenium-remote-driver</artifactId>
 	      <version>2.42.2</version>
 	    </dependency>  -->
-	    
+	    </code> 
 	+ put browser driver in the brwoser pugin's root directory (here we don't have permission
 		to add files to the C:\Program Files\ directory, so i copy the browser's home directory
 		simply under our project, http://docs.seleniumhq.org/download/)

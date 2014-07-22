@@ -1,6 +1,6 @@
 ### Selenium automates browsers
 
-## What is Selenium. An OpenQA project (http://docs.seleniumhq.org/)
+## What is [Selenium](http://docs.seleniumhq.org/). An OpenQA project 
  - Selenium IDE
  - Selenium Remote Control (deprecated)
  - Selenium WebDriver (Selenium 1.0 + WebDriver = Selenium 2.0)
@@ -16,7 +16,7 @@
  
 ## How to use Selenium
  - Add libs to maven project
-   +    <code>
+   + ```sh
 		<!-- servlet-api jetty selenium-java junit4.9 -->
 		<!-- so we just need to add this dependency-->
 	    <dependency>
@@ -77,10 +77,10 @@
 	      <artifactId>selenium-remote-driver</artifactId>
 	      <version>2.42.2</version>
 	    </dependency>  -->
-	    </code> 
+	   ``` 
 	+ put browser driver in the brwoser pugin's root directory (here we don't have permission
 		to add files to the C:\Program Files\ directory, so i copy the browser's home directory
-		simply under our project, http://docs.seleniumhq.org/download/)
+		simply under our project,[document]http://docs.seleniumhq.org/download/)
 	 	- chromedriver.exe 
 	 	- IEDriverServer.exe
 	 	
@@ -103,7 +103,7 @@
 	    
 	+ Here is a simple test case
 	 	
-	 	
+	 	```sh
 	 	package com.hawk.selenium2;
 
 		import static org.junit.Assert.assertNotNull;
@@ -200,7 +200,7 @@
 				System.out.println("Page title is: " + driver.getTitle());
 			}
 		}
-
+	```
 	 
 	 * step 1 : load the page
 	 * step 2 : find the web element
@@ -208,7 +208,7 @@
 	 * step 4 : submit or click
 	 * step 5 : close the tab and browser
 	 	
-	 	
+	 ```sh	
 	 *  dr.findElement(By.id("id")); 
      * 	dr.findElement(By.className("classNmae"));  
      * 	dr.findElement(By.tagName("tag"));
@@ -217,6 +217,6 @@
      * 	dr.findElement(By.linkText("fullLink")); 
      * 	dr.findElement(By.partialLinkText("link"));
      * 	dr.findElement(By.xpath("//input[@type='radio']"));
-	   
+	 ```  
 	    
 	    

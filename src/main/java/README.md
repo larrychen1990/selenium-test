@@ -2,8 +2,8 @@
 
 ## What is Selenium. An [OpenQA project](http://www.openqa.org/) 
  - Selenium IDE
- - Selenium Remote Control (*deprecated*)
- - Selenium WebDriver (*Selenium 1.0 + WebDriver = Selenium 2.0*)
+ - Selenium Remote Control (deprecated)
+ - Selenium WebDriver (Selenium 1.0 + WebDriver = Selenium 2.0)
  - Selenium Grid
  
 ## Why Selenium 
@@ -213,7 +213,7 @@
 	 * Step 5 : close the tab and browser
 	 	
 	 	
-	 `````	
+	 `````sh	
 	 *  dr.findElement(By.id("id")); 
      * 	dr.findElement(By.className("classNmae"));  
      * 	dr.findElement(By.tagName("tag"));

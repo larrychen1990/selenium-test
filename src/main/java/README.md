@@ -212,7 +212,8 @@
 	 * Step 4 : submit or click
 	 * Step 5 : close the tab and browser
 	 	
-	 ```sh	
+	 	
+	 `````	
 	 *  dr.findElement(By.id("id")); 
      * 	dr.findElement(By.className("classNmae"));  
      * 	dr.findElement(By.tagName("tag"));
@@ -221,6 +222,6 @@
      * 	dr.findElement(By.linkText("fullLink")); 
      * 	dr.findElement(By.partialLinkText("link"));
      * 	dr.findElement(By.xpath("//input[@type='radio']"));
-	 ```  
+	 `````  
 	    
 	    

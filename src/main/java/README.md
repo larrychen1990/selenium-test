@@ -1,6 +1,6 @@
-### Selenium automates browsers
+### [Selenium automates browsers](http://docs.seleniumhq.org/)
 
-## What is [Selenium](http://docs.seleniumhq.org/). An OpenQA project 
+## What is Selenium. An [OpenQA project](http://www.openqa.org/) 
  - Selenium IDE
  - Selenium Remote Control (deprecated)
  - Selenium WebDriver (Selenium 1.0 + WebDriver = Selenium 2.0)
@@ -80,26 +80,28 @@
 	   ``` 
 	+ put browser driver in the brwoser pugin's root directory (here we don't have permission
 		to add files to the C:\Program Files\ directory, so i copy the browser's home directory
-		simply under our project,[document]http://docs.seleniumhq.org/download/)
+		simply under our project,[document](http://docs.seleniumhq.org/download/))
 	 	- chromedriver.exe 
 	 	- IEDriverServer.exe
 	 	
 	+ set the System property
 		- Chrome 
-			- System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);
+			- ```System.setProperty(CHROME_DRIVER,CHROME_DRIVER_URL);``
 		- Firefox
-			- System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);
+			- ```System.setProperty(FIREFOX_DRIVER,FIREFOX_DRIVER_URL);```
 		- IE
-			- System.setProperty(IE_DRIVER,IE_DRIVER_URL);
+			- ```System.setProperty(IE_DRIVER,IE_DRIVER_URL);```
+		```
 		* CHROME_DRIVER="webdriver.chrome.driver";
 		* FIREFOX_DRIVER="webdriver.firefox.bin";
 		* IE_DRIVER="webdriver.ie.driver";
+		```
 	
 	+ Binding it with junit test and assert the result
 		
 	+ we should be carefull with the Selenium libs.
-		- To run the Selenium 2 projects we should use the guava15.0+.jar
-		  but not the guava11.0.2.jar which we use in Selenium 1	     
+		- To run the Selenium 2 projects we should use the `guava15.0+.jar`
+		  but not the `guava11.0.2.jar` which we use in Selenium 1	     
 	    
 	+ Here is a simple test case
 	 	

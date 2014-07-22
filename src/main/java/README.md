@@ -80,7 +80,7 @@
 	   ``` 
 	+ Put browser driver in the brwoser pugin's root directory (here we don't have permission
 		to add files to the `C:\Program Files\` directory, so i copy the browser's home directory
-		simply under our project,[document](http://docs.seleniumhq.org/download/))
+		simply under our project,[download](http://docs.seleniumhq.org/download/))
 	 	- `chromedriver.exe`
 	 	- `IEDriverServer.exe`
 	 	

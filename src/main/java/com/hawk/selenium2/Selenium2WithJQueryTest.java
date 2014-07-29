@@ -8,7 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;  
   
-public class Selenium2{  
+public class Selenium2WithJQueryTest{  
 	
 	
     WebDriver driver ;

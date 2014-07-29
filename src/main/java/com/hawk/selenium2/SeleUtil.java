@@ -14,22 +14,78 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
+import com.google.common.base.Predicate;
 import com.google.common.io.Files;
+import com.hawk.selenium2.Selenium2SimpleTest1.BrowserType;
 
-/**
- *
- * @date Jul 16, 2014
- */
-public class SeleniumUtil {
+public class SeleUtil {
 
 	private static JavascriptExecutor jse;
-	private static Log logger = LogFactory.getLog(SeleniumUtil.class);
+	private static Log logger = LogFactory.getLog(SeleUtil.class);
+
+	private static final String FIREFOX_DRIVER = "webdriver.firefox.bin";
+
+	private static final String CHROME_DRIVER_URL = "./src/main/java/com/hawk/browser/Chrome/Application/chromedriver.exe";
+	private static final String FIREFOX_DRIVER_URL = "./src/main/java/com/hawk/browser/firefox/Mozilla Firefox/firefox.exe";
+	private static final String IE_DRIVER_URL = "./src/main/java/com/hawk/browser/ie/Internet Explorer/IEDriverServer.exe";
+
+	public static  WebDriver getWebDriver(BrowserType browserType) throws Exception {
+		switch (browserType) {
+		case FIREFOX:
+			return useFirefox();
+		case IE:
+			return useIE();
+		case CHROME:
+			return useChrome();
+		default:
+			throw new RuntimeException("Browser type unsupported");
+		}
+	}
+
+	public enum BrowserType {
+		FIREFOX, IE, CHROME, HTMLUNIT
+	}
+
+	// Chrome configuration
+	static WebDriver useChrome() {
+
+		System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY,
+				CHROME_DRIVER_URL);
+		return new ChromeDriver();
+	}
+
+	// Firefox configuration
+	private static WebDriver useFirefox() throws Exception {
+		System.setProperty(FIREFOX_DRIVER, FIREFOX_DRIVER_URL);
+		return new FirefoxDriver();
+	}
+
+	// IE configuration
+	private static WebDriver useIE() {
+		System.setProperty(
+				InternetExplorerDriverService.IE_DRIVER_EXE_PROPERTY,
+				IE_DRIVER_URL);
+
+		DesiredCapabilities capad = new DesiredCapabilities();
+		capad.setCapability(
+				InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+				true);
+
+		return new InternetExplorerDriver(capad);
+
+	}
 
 	/**
 	 * 
 	 * @param iTimeInMillis
-	 * void
+	 *            void
 	 */
 	public static void pause(final int iTimeInMillis) {
 		try {
@@ -42,8 +98,7 @@ public class SeleniumUtil {
 	/**
 	 * 
 	 * @param driver
-	 * @return
-	 * boolean
+	 * @return boolean
 	 */
 	public static boolean isAlertExist(WebDriver driver) {
 		try {
@@ -59,10 +114,10 @@ public class SeleniumUtil {
 	 * @param webDriver
 	 * @param by
 	 * @param timeout
-	 * @return
-	 * WebElement
+	 * @return WebElement
 	 */
-	public static WebElement findElementsAndWait(WebDriver webDriver, By by, int timeout) {
+	public static WebElement findElementsAndWait(WebDriver webDriver, By by,
+			int timeout) {
 		int iSleepTime = 1000;
 		for (int i = 0; i < timeout; i += iSleepTime) {
 			List<WebElement> webElements = webDriver.findElements(by);
@@ -71,10 +126,9 @@ public class SeleniumUtil {
 			} else {
 				try {
 					Thread.sleep(iSleepTime);
-					logger.error(String
-							.format("%s: Waited for %d milliseconds.[%s]",
-									new Date().toString(), i
-											+ iSleepTime, by));
+					logger.error(String.format(
+							"%s: Waited for %d milliseconds.[%s]",
+							new Date().toString(), i + iSleepTime, by));
 				} catch (InterruptedException ex) {
 					throw new RuntimeException(ex);
 				}
@@ -129,7 +183,7 @@ public class SeleniumUtil {
 	 * @param path
 	 * @param name
 	 * @param oper
-	 * void
+	 *            void
 	 */
 	public static void TakeScreenshot(ChromeDriver dr, String path,
 			String name, String oper) {
@@ -167,6 +221,11 @@ public class SeleniumUtil {
 		return loaded;
 	}
 
+	/**
+	 * load the JQuery
+	 * 
+	 * 
+	 */
 	private static void injectjQuery() {
 		jse.executeScript(" var headID = "
 				+ "document.getElementsByTagName(\"head\")[0];"
@@ -175,5 +234,19 @@ public class SeleniumUtil {
 				+ "newScript.src = "
 				+ "'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';"
 				+ "headID.appendChild(newScript);");
+	}
+
+	public static Predicate<WebDriver> textIsPresent(WebDriver driver,
+			String text) {
+		final String t = text;
+		return new Predicate<WebDriver>() {
+			public boolean apply(WebDriver driver) {
+				return isTextPresent(driver, t);
+			}
+		};
+	}
+
+	protected static boolean isTextPresent(WebDriver driver, String text) {
+		return driver.getPageSource().contains(text);
 	}
 }

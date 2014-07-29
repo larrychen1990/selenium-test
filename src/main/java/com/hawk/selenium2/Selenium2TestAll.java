@@ -8,30 +8,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
   
-public class TestAllInOne {  
+public class Selenium2TestAll {  
     public static final String BASE_URL = "http://www.baidu.com";  
     
-    private static Log logger=LogFactory.getLog(TestAllInOne.class);
+    private static Log logger=LogFactory.getLog(Selenium2TestAll.class);
   
     public static void main(String[] args) throws Exception {  
 		System.setProperty("webdriver.chrome.driver", "./src/main/java/com/hawk/browser/Chrome/Application/chromedriver.exe");
         
         
-        //打开firefox  
+        //æ‰“å¼€firefox  
         ChromeDriver dr = new ChromeDriver();  
           
-        //访问页面  
+        //è®¿é—®é¡µé�¢  
         dr.get(BASE_URL);  
-//      dr.navigate().to(BASE_URL);//与dr.get()效果相同  
-//      dr.navigate().forward();//让浏览器前进一步  
-//      dr.navigate().back();//让浏览器后退一步  
+//      dr.navigate().to(BASE_URL);//ä¸Ždr.get()æ•ˆæžœç›¸å�Œ  
+//      dr.navigate().forward();//è®©æµ�è§ˆå™¨å‰�è¿›ä¸€æ­¥  
+//      dr.navigate().back();//è®©æµ�è§ˆå™¨å�Žé€€ä¸€æ­¥  
         logger.info(dr.getPageSource());  
           
-        //等待页面加载完毕，直到条件满足  
+        //ç­‰å¾…é¡µé�¢åŠ è½½å®Œæ¯•ï¼Œç›´åˆ°æ�¡ä»¶æ»¡è¶³  
         (new WebDriverWait(dr, 10)).until(new ExpectedCondition<Boolean>() {  
             public Boolean apply(WebDriver dr) {  
             	logger.info("web driver wait...");  
-                int index = dr.getPageSource().indexOf("京ICP证030173号");  
+                int index = dr.getPageSource().indexOf("äº¬ICPè¯�030173å�·");  
                 if(index != -1){  
                 	logger.info("web driver wait, true...");  
                     return true;  
@@ -42,11 +42,11 @@ public class TestAllInOne {
             }  
         });  
           
-        //等待页面加载完毕，直到条件满足，一个while循环，也挺简单的吧  
+        //ç­‰å¾…é¡µé�¢åŠ è½½å®Œæ¯•ï¼Œç›´åˆ°æ�¡ä»¶æ»¡è¶³ï¼Œä¸€ä¸ªwhileå¾ªçŽ¯ï¼Œä¹ŸæŒºç®€å�•çš„å�§  
         /* 
         while(true){ 
              Log.Info("wait for..."); 
-            int index = dr.getPageSource().indexOf("京ICP证030173号"); 
+            int index = dr.getPageSource().indexOf("äº¬ICPè¯�030173å�·"); 
             if(index != -1){ 
                 Log.Info("wait for, true..."); 
                 break; 
@@ -54,16 +54,16 @@ public class TestAllInOne {
             Thread.sleep(1 * 1000); 
         }*/  
           
-        //等待元素加载完成  
+        //ç­‰å¾…å…ƒç´ åŠ è½½å®Œæˆ�  
 //      (new WebDriverWait(dr, 10)).until(  
 //          ExpectedConditions.presenceOfElementLocated(By.id("kw"))  
 //      );  
           
-        //等待元素加载完成，并可点击  
+        //ç­‰å¾…å…ƒç´ åŠ è½½å®Œæˆ�ï¼Œå¹¶å�¯ç‚¹å‡»  
 //      WebDriverWait wait = new WebDriverWait(dr, 10);  
 //      wait.until(ExpectedConditions.elementToBeClickable(By.id("su")));  
           
-        //全局性的影响，只要WebDriver不消失，每隔10秒检查元素是否加载完成，直到加载完成。  
+        //å…¨å±€æ€§çš„å½±å“�ï¼Œå�ªè¦�WebDriverä¸�æ¶ˆå¤±ï¼Œæ¯�éš”10ç§’æ£€æŸ¥å…ƒç´ æ˜¯å�¦åŠ è½½å®Œæˆ�ï¼Œç›´åˆ°åŠ è½½å®Œæˆ�ã€‚  
 //      dr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
 //      dr.get("http://somedomain/url_that_delays_loading");  
 //      dr.findElement(By.id("myDynamicElement"));  
@@ -72,30 +72,30 @@ public class TestAllInOne {
 //      we.sendKeys("selenium");  
 //      we.click();  
           
-//      dr.findElement(By.id("元素id"));//最常用  
-//      dr.findElement(By.className("class名称"));//比较常用  
-//      dr.findElement(By.tagName("tag名称"));//比较常用  
-//      dr.findElement(By.cssSelector("css选择器"));//比较常用  
-//      dr.findElement(By.name("元素的name属性"));//比较常用  
-//      dr.findElement(By.linkText("超链接的内容"));//不常用  
-//      dr.findElement(By.partialLinkText("超链接的部分内容"));//不常用  
-//      dr.findElement(By.xpath("xpath表达式"));//不常用  
+//      dr.findElement(By.id("å…ƒç´ id"));//æœ€å¸¸ç”¨  
+//      dr.findElement(By.className("classå��ç§°"));//æ¯”è¾ƒå¸¸ç”¨  
+//      dr.findElement(By.tagName("tagå��ç§°"));//æ¯”è¾ƒå¸¸ç”¨  
+//      dr.findElement(By.cssSelector("cssé€‰æ‹©å™¨"));//æ¯”è¾ƒå¸¸ç”¨  
+//      dr.findElement(By.name("å…ƒç´ çš„nameå±žæ€§"));//æ¯”è¾ƒå¸¸ç”¨  
+//      dr.findElement(By.linkText("è¶…é“¾æŽ¥çš„å†…å®¹"));//ä¸�å¸¸ç”¨  
+//      dr.findElement(By.partialLinkText("è¶…é“¾æŽ¥çš„éƒ¨åˆ†å†…å®¹"));//ä¸�å¸¸ç”¨  
+//      dr.findElement(By.xpath("xpathè¡¨è¾¾å¼�"));//ä¸�å¸¸ç”¨  
           
-        //1:用java从文本中读取jQuery，并用WebDriver加载jQuery  
+        //1:ç”¨javaä»Žæ–‡æœ¬ä¸­è¯»å�–jQueryï¼Œå¹¶ç”¨WebDriveråŠ è½½jQuery  
         SeleUtil.LoadAndExecuteJQuery(dr);  
-        //2:用WebDriver执行你写的jQuery代码，可以返回单个元素，也可以返回元素数组，或无返回值  
-        //执行你的jQuery代码，既然能执行自已的jQuery代码，就能做任何事情了  
+        //2:ç”¨WebDriveræ‰§è¡Œä½ å†™çš„jQueryä»£ç �ï¼Œå�¯ä»¥è¿”å›žå�•ä¸ªå…ƒç´ ï¼Œä¹Ÿå�¯ä»¥è¿”å›žå…ƒç´ æ•°ç»„ï¼Œæˆ–æ— è¿”å›žå€¼  
+        //æ‰§è¡Œä½ çš„jQueryä»£ç �ï¼Œæ—¢ç„¶èƒ½æ‰§è¡Œè‡ªå·²çš„jQueryä»£ç �ï¼Œå°±èƒ½å�šä»»ä½•äº‹æƒ…äº†  
         dr.executeScript("$('#kw1').val('selenium'); $('#kw1').val($('#kw1').val() + ' java');");  
         
         //you can  submit the search content by click the button
         dr.findElement(By.id("su1")).click();
         
-        //也可以用WebDriver API进行页面元素的操作  
+        //ä¹Ÿå�¯ä»¥ç”¨WebDriver APIè¿›è¡Œé¡µé�¢å…ƒç´ çš„æ“�ä½œ  
 //        WebElement el = dr.findElement(By.id("kw1"));  
 //        el.sendKeys("selenium java"); 
 //        el.submit();
           
-        //WebDriver专用的select下接框处理类  
+        //WebDriverä¸“ç”¨çš„selectä¸‹æŽ¥æ¡†å¤„ç�†ç±»  
         /* 
         List<WebElement> elList = dr.findElements(By.tagName("select")); 
         if(elList != null && elList.size() > 0){ 
@@ -106,13 +106,13 @@ public class TestAllInOne {
             select.selectByValue("10010"); 
         }*/  
           
-        //window和frame的切换  
+        //windowå’Œframeçš„åˆ‡æ�¢  
         /* 
         dr.switchTo().window("xxName"); 
         dr.switchTo().frame("xxName"); 
         */  
           
-        //浏览器自带的alert弹出框的处理  
+        //æµ�è§ˆå™¨è‡ªå¸¦çš„alertå¼¹å‡ºæ¡†çš„å¤„ç�†  
         /* 
         Alert alert = dr.switchTo().alert(); 
         if(alert != null){ 
@@ -122,26 +122,26 @@ public class TestAllInOne {
         }*/  
           
         /* 
-        //用jQuery查找一个元素 
+        //ç”¨jQueryæŸ¥æ‰¾ä¸€ä¸ªå…ƒç´  
         WebElement wea = (WebElement)dr.executeScript("return $('#kw').get(0);"); 
-        //用jQuery查找一组元素 
+        //ç”¨jQueryæŸ¥æ‰¾ä¸€ç»„å…ƒç´  
         List<WebElement> weaList = (List<WebElement>)dr.executeScript("return $('.stu_info').get();"); 
-        //返回Boolean 
+        //è¿”å›žBoolean 
         Boolean flagB = (Boolean)dr.executeScript("return true;"); 
-        //返回Double 
+        //è¿”å›žDouble 
         Double flagD = (Double)dr.executeScript("return 12.12;"); 
-        //返回Long 
+        //è¿”å›žLong 
         Long flagL = (Long)dr.executeScript("return 123;"); 
-        //返回String 
+        //è¿”å›žString 
         String flagS = (String)dr.executeScript("return 'collonn';"); 
-        //返回String数组 
+        //è¿”å›žStringæ•°ç»„ 
         List<String> flagSs = (List<String>)dr.executeScript("var ary = ['a', 'b', 'c']; return ary;"); 
         */  
           
-        //保存网面截图  
+        //ä¿�å­˜ç½‘é�¢æˆªå›¾  
         SeleUtil.TakeScreenshot(dr, "../selenium-test/src/main/java/com/hawk/selenium2/screenshot/","selenium java",".png");  
           
-        //关闭浏览器  
+        //å…³é—­æµ�è§ˆå™¨  
         dr.quit();  
     }  
   

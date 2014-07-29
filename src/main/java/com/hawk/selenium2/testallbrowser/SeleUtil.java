@@ -71,6 +71,9 @@ public class SeleUtil {
 		capad.setCapability(
 				InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
 				true);
+		
+		capad.setCapability(InternetExplorerDriver.IE_USE_PRE_PROCESS_PROXY, true);
+		
 		return new InternetExplorerDriver(capad);
 
 	}

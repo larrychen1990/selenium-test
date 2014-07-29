@@ -7,10 +7,10 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	InjectChrome.class,
-	Selenium2SimpleTest.class,
-	InjectFirefox.class,
-	Selenium2SimpleTest.class,
+//	InjectChrome.class,
+//	Selenium2SimpleTest.class,
+//	InjectFirefox.class,
+//	Selenium2SimpleTest.class,
 	InjectIE.class,
 	Selenium2SimpleTest.class
 })

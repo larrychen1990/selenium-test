@@ -8,6 +8,6 @@ public class InjectChrome {
 
 	@Test
 	public void setChrome() throws Exception {
-		Selenium2SimpleTest.setDriver(SeleUtil.getWebDriver(BrowserType.CHROME));
+		Selenium2SimpleTest.setBt(BrowserType.CHROME);
 	}
 }

@@ -1,18 +1,28 @@
 package com.hawk.selenium2.testallbrowser;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.HasInputDevices;
+import org.openqa.selenium.interactions.Keyboard;
+
+import com.hawk.selenium2.testallbrowser.SeleUtil.BrowserType;
 
 public class Selenium2SimpleTest {
 
-	private static WebDriver driver;
+	private WebDriver driver;
+	protected static BrowserType bt;
 
+	private static final String BASE_URL = "http://www.baidu.com";
 
-	private static final String BASE_URL = "http://www.google.com.au";
-
+	@Before
+	public void setup() throws Exception {
+		driver = SeleUtil.getWebDriver(getBt());
+	}
 
 	@After
 	public void tearDown() {
@@ -21,24 +31,38 @@ public class Selenium2SimpleTest {
 
 	@Test
 	public void testFirst() {
+
+//		Keyboard keyboard = ((HasInputDevices) driver).getKeyboard();
+
+//		keyboard.sendKeys(Keys.F12);
+		
+//		 keyboard.pressKey(Keys.F12);
+//		 //do stuff...
+//		 keyboard.releaseKey(Keys.F12);
+		 driver.getWindowHandle();
 		driver.get(BASE_URL);
-		SeleUtil.pause(2);
-		WebElement element = driver.findElement(By.name("q"));
-		element.sendKeys("Cheese");
-		element.submit();
-		System.out.println("done");
+		
+		driver.getWindowHandle();
+		
+		
+		System.out.println(driver.getPageSource());
+		
+		WebElement element = driver.findElement(By.id("kw"));
+		System.out.println(element);
+//		SeleUtil.pause(2);
+//		WebElement element = driver.findElement(By.name("q"));
+//		element.sendKeys("Cheese");
+//
+//		element.submit();
+//		System.out.println("done");
 	}
 
-	public static WebDriver getDriver() {
-		return driver;
+	public static BrowserType getBt() {
+		return bt;
 	}
 
-	public static void setDriver(WebDriver driver) {
-		Selenium2SimpleTest.driver = driver;
+	public static void setBt(BrowserType bt) {
+		Selenium2SimpleTest.bt = bt;
 	}
-
-
-	
-	
 
 }

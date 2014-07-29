@@ -10,6 +10,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	InjectChrome.class,
 	Selenium2SimpleTest.class,
 	InjectFirefox.class,
+	Selenium2SimpleTest.class,
+	InjectIE.class,
 	Selenium2SimpleTest.class
 })
 public class TestAllBrowser {

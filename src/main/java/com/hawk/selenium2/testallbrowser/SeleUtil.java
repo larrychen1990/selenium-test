@@ -37,11 +37,11 @@ public class SeleUtil {
 	public static  WebDriver getWebDriver(BrowserType browserType) throws Exception {
 		switch (browserType) {
 		case FIREFOX:
-			return getFirefox();
+			return getFirefoxDriver();
 		case IE:
-			return getIE();
+			return getIEDriver();
 		case CHROME:
-			return getChrome();
+			return getChromeDriver();
 		default:
 			throw new RuntimeException("Browser type unsupported");
 		}
@@ -51,18 +51,18 @@ public class SeleUtil {
 		FIREFOX, IE, CHROME, HTMLUNIT
 	}
 
-	private static WebDriver getChrome() {
+	private static WebDriver getChromeDriver() {
 		System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY,
 				CHROME_DRIVER_URL);
 		return new ChromeDriver();
 	}
 	
-	private static WebDriver getFirefox() {
+	private static WebDriver getFirefoxDriver() {
 		System.setProperty(FIREFOX_DRIVER, FIREFOX_DRIVER_URL);
 		return new FirefoxDriver();
 	}
 
-	private static WebDriver getIE() {
+	private static WebDriver getIEDriver() {
 		System.setProperty(
 				InternetExplorerDriverService.IE_DRIVER_EXE_PROPERTY,
 				IE_DRIVER_URL);

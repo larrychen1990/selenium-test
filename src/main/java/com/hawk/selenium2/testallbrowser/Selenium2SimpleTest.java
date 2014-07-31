@@ -4,11 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.HasInputDevices;
-import org.openqa.selenium.interactions.Keyboard;
 
 import com.hawk.selenium2.testallbrowser.SeleUtil.BrowserType;
 
@@ -40,10 +37,16 @@ public class Selenium2SimpleTest {
 //		 //do stuff...
 //		 keyboard.releaseKey(Keys.F12);
 		 driver.getWindowHandle();
+		 
 		driver.get(BASE_URL);
-		
+		driver.switchTo().frame(1);
 		driver.getWindowHandle();
 		
+		driver.switchTo().alert();
+		driver.switchTo().frame("");
+		driver.switchTo().window("");
+		
+//		Alert alert=new Alert();
 		
 		System.out.println(driver.getPageSource());
 		

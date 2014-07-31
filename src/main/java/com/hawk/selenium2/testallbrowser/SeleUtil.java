@@ -63,16 +63,16 @@ public class SeleUtil {
 	}
 
 	private static WebDriver getIEDriver() {
-		System.setProperty(
-				InternetExplorerDriverService.IE_DRIVER_EXE_PROPERTY,
-				IE_DRIVER_URL);
-
-		DesiredCapabilities capad = new DesiredCapabilities();
-		capad.setCapability(
-				InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-				true);
+		System.setProperty(InternetExplorerDriverService.IE_DRIVER_EXE_PROPERTY,IE_DRIVER_URL);
 		
-		capad.setCapability(InternetExplorerDriver.IE_USE_PRE_PROCESS_PROXY, true);
+		
+		DesiredCapabilities capad = DesiredCapabilities.internetExplorer();
+		capad.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+		
+//		capad.setCapability(ForSeleniumServer.AVOIDING_PROXY, true);
+//		capad.setCapability(InternetExplorerDriver.IE_USE_PRE_PROCESS_PROXY, true);
+//		capad.setCapability(InternetExplorerDriver.IE_SWITCHES, true);
+//		capad.setCapability(CapabilityType.PROXY, proxy);
 		
 		return new InternetExplorerDriver(capad);
 
@@ -88,20 +88,6 @@ public class SeleUtil {
 			Thread.sleep(iTimeInMillis);
 		} catch (InterruptedException ex) {
 			logger.error(ex.getMessage(), ex.getCause());
-		}
-	}
-
-	/**
-	 * 
-	 * @param driver
-	 * @return boolean
-	 */
-	public static boolean isAlertExist(WebDriver driver) {
-		try {
-			driver.switchTo().alert();
-			return true;
-		} catch (Exception ex) {
-			return false;
 		}
 	}
 
@@ -158,10 +144,22 @@ public class SeleUtil {
 			String current = driver.getWindowHandle();
 			Set<String> otherWins = driver.getWindowHandles();
 			for (String winId : otherWins)
-				if (winId.equals(current))
+				if (winId.equals(current)) {
 					continue;
-				else
-					driver.switchTo().window(winId).close();
+				}else {
+					
+					if (isFrameExist(driver,winId)) {
+						driver.switchTo().window(winId).close();
+					}
+					
+					if (isFrameExist(driver,winId)) {
+						driver.switchTo().frame(winId).close();
+					}
+					
+					if (isAlertExist(driver)) {
+						driver.switchTo().alert().accept();
+					}
+				}
 		} catch (Exception ex) {
 			logger.error(ex.getMessage(), ex.getCause());
 		} finally {
@@ -173,6 +171,38 @@ public class SeleUtil {
 		}
 	}
 
+	/**
+	 * 
+	 * @param driver
+	 * @return boolean
+	 */
+	public static boolean isAlertExist(WebDriver driver) {
+		try {
+			driver.switchTo().alert();
+			return true;
+		} catch (Exception ex) {
+			return false;
+		}
+	}
+
+	public static boolean isFrameExist(WebDriver driver,String winId) {
+		try {
+			driver.switchTo().frame(winId);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	} 
+	
+	public static boolean isWindowsExist(WebDriver driver,String winId) {
+		try {
+			driver.switchTo().window(winId);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	} 
+	
 	/**
 	 * 
 	 * @param dr

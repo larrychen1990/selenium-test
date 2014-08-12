@@ -5,11 +5,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -185,13 +187,13 @@ public class SeleUtil {
 	 * @param oper
 	 *            void
 	 */
-	public static void TakeScreenshot(ChromeDriver dr, String path,
+	public static void TakeScreenshot(WebDriver driver, String path,
 			String name, String oper) {
 		try {
 
 			Thread.currentThread().sleep(3000);
 
-			File screenshotFile = dr.getScreenshotAs(OutputType.FILE);
+			File screenshotFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
 			String savePath = name + oper;
 
@@ -200,7 +202,7 @@ public class SeleUtil {
 			}
 
 			Files.copy(screenshotFile, new File(path + savePath));
-
+//			FileUtils.copyFile(screenshotFile, new File(path + savePath));
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e.getCause());
 		}

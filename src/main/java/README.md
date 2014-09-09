@@ -214,7 +214,7 @@
 	 *  dr.findElement(By.id("id")); 
      * 	dr.findElement(By.className("classNmae"));  
      * 	dr.findElement(By.tagName("tag"));
-     * 	dr.findElement(By.cssSelector("className|name|id"));// .dijit.dijitItems the second . delegate blank space  
+     * 	dr.findElement(By.cssSelector("className|name|id"));// .dijit.dijitItems the second   
      * 	dr.findElement(By.name("name"));  
      * 	dr.findElement(By.linkText("fullLink")); 
      * 	dr.findElement(By.partialLinkText("link"));
